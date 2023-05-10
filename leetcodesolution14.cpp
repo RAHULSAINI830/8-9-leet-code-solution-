@@ -1,14 +1,14 @@
-class Solution:
-  def maxVowels(self, s: str, k: int) -> int:
-    ans = 0
-    maxi = 0
-    vowels = {'a', 'e', 'i', 'o', 'u'}
+class Solution {
+ public:
+  string longestCommonPrefix(vector<string>& strs) {
+    if (strs.empty())
+      return "";
 
-    for i, c in enumerate(s):
-      if c in vowels:
-        maxi += 1
-      if i >= k and s[i - k] in vowels:
-        maxi -= 1
-      ans = max(ans, maxi)
+    for (int i = 0; i < strs[0].length(); ++i)
+      for (int j = 1; j < strs.size(); ++j)
+        if (i == strs[j].length() || strs[j][i] != strs[0][i])
+          return strs[0].substr(0, i);
 
-    return ans
+    return strs[0];
+  }
+};
