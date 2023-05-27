@@ -1,4 +1,4 @@
-leetcode solution 8:-
+/** leetcode solution**/
 
 class Solution {
  public:
